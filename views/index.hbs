@@ -1,8 +1,17 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-{{#each artists}}
-<p>
-<img src={{images.2.url}}>
-  {{name}}</p>
-{{/each}}
+<div class="container">
+  <div class="columns is-variable is-multiline is-mobile">
+    {{#each artists}}
+    <div class="column is-narrow">
+        <figure class="image is-128x128 is-clipped">
+          <img src={{images.2.url}}>
+        </figure>
+        <br>
+        {{name}}
+    </div>
+
+    {{/each}}
+  </div>
+</div>
