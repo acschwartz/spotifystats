@@ -1,15 +1,30 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1 class="title">{{title}}</h1>
 
 <div class="container">
   <div class="columns is-variable is-multiline is-mobile">
     {{#each artists}}
     <div class="column is-narrow">
-        <figure class="image is-128x128 is-clipped">
-          <img src={{images.2.url}}>
-        </figure>
-        <br>
-        {{name}}
+      <div class="card is-shadowless">
+        <div class="card-image is-block">
+          <figure class="image is-128x128 is-clipped">
+              <img src={{images.0.url}} class="is-block">
+          </figure>
+          <div class="content is-overlay" style="padding: 0.05rem; padding-left:0.5rem;">
+            <p class="has-text-white has-text-weight-bold is-size-4">
+              {{@index}}
+            </p>
+          </div>
+        </div>
+        <a href={{external_urls.spotify}} target="_blank">
+          <div class="container has-background-black-ter is-block" style="padding: 0.25rem;">
+            <div class="content" style="overflow-wrap: break-word;">
+              <p class="has-text-white has-text-centered has-text-weight-semibold" style="">
+                {{name}}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
 
     {{/each}}
